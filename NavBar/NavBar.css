@@ -1,0 +1,55 @@
+
+
+
+.div_container img {
+    padding-left: 20px;
+    width: 150px;
+}
+
+.div_container {
+
+        display: flex;
+        flex-direction: row;
+        height: 150px;
+        width: auto;
+        background-color: black;
+justify-content: space-between;
+}
+
+ul {
+    color: #ffffff;
+    font-size: 30px;
+    gap: 50px;
+    display: flex;
+    justify-content: row;
+    list-style: none;
+    /* font-weight: 900; */
+    align-items: center;
+    padding-right: 50px;
+}
+
+.btn_Entrar {
+    background-color: #000000;
+    padding: 5px;
+    font-size: 30px;
+    border: 3px solid #0070CC;
+    border-radius: 100px;
+    color: #0070CC;
+    width: 150px;
+}
+
+.btn_Registrar {
+    background-color: #0070CC;
+    border: 3px solid #0070CC;
+    border-radius: 100px;
+    color: #ffffff;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    width: 150px;
+
+}
+
+body {
+    margin: 0;
+}
