@@ -1,0 +1,76 @@
+#imagemFundo {
+    background-image: url(../assets/imagens/Imagens_Result/FimJim.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.div_container3 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.div_result {
+    display: table;
+    background-color: #7A16075d;
+    flex-direction: column;
+    width: 1000px;
+    border: solid;
+    border-color: black;
+    align-items: center;
+    border-radius: 20px;
+    color: #ffffff;
+    
+}
+
+.div_texto {
+    width: 60%;
+    display: table-cell;
+    float: left;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.img_Jim {
+    width: 30%;
+    display: table-cell;
+    float: right;
+    margin: 0;
+}
+
+.img_Jim img {
+    max-width: 100%;
+    height: 500px;
+    width: 281px;
+    margin-left: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-radius: 50px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+
+    padding: 5px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #ffffff81;
+    font-family: 'Roboto', sans-serif;
+    float: right;
+
+}
+
+span {
+
+    padding-bottom: 10px ;
+
+}
