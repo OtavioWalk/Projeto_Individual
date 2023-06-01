@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/NavBar.css">
+    <link rel="stylesheet" href="../css/Cadastro.css">
+    <script src="./js/funcoes.js"></script>
+</head>
+
+<body>
+
+    <header>
+
+        <div id="container " class="div_container">
+
+            <a href="../index.html"><img class="logo" src="../assets/imagens/PS BLOG.png" alt=""></a>
+            <ul>
+                <a href="">
+                    <p>Sobre nós</p>
+                </a>
+                <a href="../Testes/Testes.html">
+                    <p>Testes</p>
+                </a>
+                <a href="">
+                    <p>Outros</p>
+                </a>
+                <p>|</p>
+                <a href="../login.html"><button class="btn_Entrar">Entrar</button></a>
+                <a href="../Cadastro.html"><button class="btn_Registrar">Registrar</button></a>
+            </ul>
+
+        </div>
+    </header>
+
+    <div id="imagemFundo">
+        <br><br>
+        <!-- <div class="div_container3">
+            <div class="div_cadastro">
+
+                <h1>Cadastro</h1>
+
+                <span>Seu E-mail</span>
+                <br>
+                <input id="ipt_email">
+                <br><br>
+                <span>Nickname</span>
+                <br>
+                <input id="ipt_nick">
+                <br><br>
+                <span>Sua idade</span>
+                <br>
+                <input id="ipt_nascimento">
+                <br><br>
+                <span>Sua senha</span>
+                <br>
+                <input id="ipt_senha">
+                <br><br><br>
+                <div class="div_botaoCad"> <button onclick="cadastrar()">Cadastrar</button></div>
+                <br><br>
+            </div>
+        </div> -->
+        <div class="login">
+            <!-- <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div> -->
+            <div class="div_container3">
+                <div class="div_cadastro">
+                    <h1 >Bem-vindo!</h1>
+    
+                        <!--
+                             Para inserir mais um campo, copie uma das inputs abaixo.
+                             Assim que inserir vá para o script abaixo.
+                         -->
+    
+                            <span>Nome:</span>
+                            <input id="nome_input" type="text" placeholder="Seu nome">
+                            <br>
+                            <span>E-mail:</span>
+                            <input id="email_input" type="text" placeholder="meuemail@gmail.com">
+                            <br>
+                            <span>Senha:</span>
+                            <input id="senha_input" type="password">
+                            <br>
+                            <span>Confirmação da Senha:</span>
+                            <input id="confirmacao_senha_input" type="password">
+                            <br><br>
+                        <button class="botao" onclick="cadastrar()">Cadastrar</button>
+                        <br>
+    
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+
+
+</body>
+
+</html>
+<script>
+    function cadastrar() {
+
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+
+
+
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+    
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+
+    }
+
+</script>
