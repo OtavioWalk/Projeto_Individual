@@ -164,39 +164,65 @@ submit5.addEventListener('click', function () {
 
             if (i == 0) {
 
-                div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 0%.png" style="border-radius: 50px;">`
+                div_imgCarregando.innerHTML = `<img src="" style="border-radius: 50px;">`
                 await timer(2);
 
             } else if (i == 1) {
 
-                div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 25%.png" style="border-radius: 50px;">`
+                div_imgCarregando.innerHTML = `<img src="/assets/imagens/Carregando/Carregando 0%.png" style="border-radius: 50px;">`
                 await timer(2);
 
             } else if (i == 2) {
 
-                div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 50%.png" style="border-radius: 50px;">`
-                await timer(4);
+                div_imgCarregando.innerHTML = `<img src="/assets/imagens/Carregando/Carregando 50%.png" style="border-radius: 50px;">`
+                await timer(1);
 
             } else if (i == 3) {
 
                 div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 75%.png" style="border-radius: 50px;">`
-                await timer(4);
+                await timer(2);
 
             } else if (i == 4) {
 
                 div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 99%.png" style="border-radius: 50px;">`
-                await timer(6);
+                await timer(1);
 
             } else if (i == 5) {
 
                 div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 100%.png" style="border-radius: 50px;">`
-                await timer(3);
+                await timer(1);
 
             } else if (i == 6) {
 
-                div_container_29.style.display = "none"
+
+
+
+                // div_container_29.style.display = "none"
+                // questions_box.style.display = "none"
+                // container.style.display = "none"
+
+                // if (totalscore() >= 4 && totalscore() <= 7){
+
+                //     alert (`Aloy`)
+                // // window.location.href = "../Teste Bolinhas/Resultado_Aloy"
+
+                // }else if (totalscore() >= 8 && totalscore() <= 11) {
+
+                //     alert (`Deacon`)
+                //     // div_container_29.style.display = "none"
+
+                // }else if (totalscore() >= 12 && totalscore() <= 15) {
+
+                //     alert (`Jim`)
+                //     // div_container_29.style.display = "none"
+
+                // }else if (totalscore() >= 16 && totalscore() <= 20) {
+
+                //     alert (`Kratos`)
+                //     // div_container_29.style.display = "none"
+
+                // }
                 
-                window.location.href = "../Teste Bolinhas/Resultado_Aloy"
 
             }
 

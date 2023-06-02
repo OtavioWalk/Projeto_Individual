@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/NavBar.css">
-    <link rel="stylesheet" href="../css/Cadastro.css">
-    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="css/NavBar.css">
+    <link rel="stylesheet" href="css/Cadastro.css">
+    <script src="js/funcoes.js"></script>
 </head>
 
 <body>
@@ -20,20 +20,19 @@
 
         <div id="container " class="div_container">
 
-            <a href="../index.html"><img class="logo" src="../assets/imagens/PS BLOG.png" alt=""></a>
+            <a href="index.html"><img class="logo" src="assets/imagens/PS BLOG.png" alt=""></a>
             <ul>
                 <a href="">
                     <p>Sobre nós</p>
                 </a>
-                <a href="../Testes/Testes.html">
+                <a href="Testes/Testes.html">
                     <p>Testes</p>
                 </a>
-                <a href="">
-                    <p>Outros</p>
+                <a href=""><p>Notícias</p>
                 </a>
                 <p>|</p>
-                <a href="../login.html"><button class="btn_Entrar">Entrar</button></a>
-                <a href="../Cadastro.html"><button class="btn_Registrar">Registrar</button></a>
+                <a href="login.html"><button class="btn_Entrar">Entrar</button></a>
+                <a href="cadastro.html"><button class="btn_Registrar">Registrar</button></a>
             </ul>
 
         </div>
@@ -74,28 +73,28 @@
             </div> -->
             <div class="div_container3">
                 <div class="div_cadastro">
-                    <h1 >Bem-vindo!</h1>
-    
-                        <!--
+                    <h1>Bem-vindo!</h1>
+
+                    <!--
                              Para inserir mais um campo, copie uma das inputs abaixo.
                              Assim que inserir vá para o script abaixo.
                          -->
-    
-                            <span>Nome:</span>
-                            <input id="nome_input" type="text" placeholder="Seu nome">
-                            <br>
-                            <span>E-mail:</span>
-                            <input id="email_input" type="text" placeholder="meuemail@gmail.com">
-                            <br>
-                            <span>Senha:</span>
-                            <input id="senha_input" type="password">
-                            <br>
-                            <span>Confirmação da Senha:</span>
-                            <input id="confirmacao_senha_input" type="password">
-                            <br><br>
-                        <button class="botao" onclick="cadastrar()">Cadastrar</button>
-                        <br>
-    
+
+                    <span>Nome:</span>
+                    <input id="nome_input" type="text" placeholder="Seu nome">
+                    <br>
+                    <span>E-mail:</span>
+                    <input id="email_input" type="text" placeholder="meuemail@gmail.com">
+                    <br>
+                    <span>Senha:</span>
+                    <input id="senha_input" type="password">
+                    <br>
+                    <span>Confirmação da Senha:</span>
+                    <input id="confirmacao_senha_input" type="password">
+                    <br><br>
+                    <button class="botao" onclick="cadastrar()">Cadastrar</button>
+                    <br>
+
                 </div>
             </div>
         </div>
@@ -117,10 +116,12 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        sessionStorage.nome = nomeVar
+
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
 
-
+            alert('Insira os dados corretamente')
 
             return false;
         }
@@ -153,7 +154,7 @@
                 }, "2000")
 
                 limparFormulario();
-    
+
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }

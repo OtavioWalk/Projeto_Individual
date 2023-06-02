@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/NavBar.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/css/NavBar.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body>
@@ -19,20 +19,18 @@
 
         <div id="container " class="div_container">
 
-            <a href="../Página inicial/PaginaInicial.html"><img class="logo" src="../assets/imagens/PS BLOG.png" alt=""></a>
+            <a href="/index.html"><img class="logo" src="/assets/imagens/PS BLOG.png" alt=""></a>
             <ul>
                 <a href="">
                     <p>Sobre nós</p>
                 </a>
-                <a href="../Testes/Testes.html">
-                    <p>Testes</p>
+                <a href="/Testes/Testes.html"><p>Testes</p>
                 </a>
-                <a href="">
-                    <p>Outros</p>
+                <a href=""><p>Notícias</p>
                 </a>
                 <p>|</p>
-                <a href=""><button class="btn_Entrar">Entrar</button></a>
-                <a href="../Cadastro.html"><button class="btn_Registrar">Registrar</button></a>
+                <a href="/login.html"><button class="btn_Entrar">Entrar</button></a>
+                <a href="/cadastro.html"><button class="btn_Registrar">Registrar</button></a>
             </ul>
 
         </div>
@@ -45,21 +43,93 @@
 
                 <h1>Login</h1>
 
-                <span>Seu E-mail</span>
-                <br>
-                <input id="ipt_email">
+                <span>Seu E-mail:</span>
+
+                <input id="email_input">
                 <br><br>
-                <span>Sua senha</span>
-                <br>
-                <input type="password" id="ipt_senha">
-                <br><br><br>
+                <span>Sua senha:</span>
+
+                <input type="password" id="senha_input">
+                <br><br>
                 <div> <button onclick="entrar()">Entrar</button></div>
-                <br><br>
+                <br>
+                <a href="/cadastro.html">Não possui uma conta? Crie uma</a>
+                <br>
             </div>
         </div>
         <br><br><br><br><br>
     </div>
 
 </body>
+<script>
+
+
+    function entrar() {
+
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+
+        if (emailVar == "" || senhaVar == "") {
+            alert('Insira os dados corretamente')
+            return false;
+        }
+        else {
+
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "/";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+                alert("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+</script>
 
 </html>
