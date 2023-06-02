@@ -69,7 +69,7 @@
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
-
+        
 
         if (emailVar == "" || senhaVar == "") {
             alert('Insira os dados corretamente')
@@ -106,7 +106,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "/";
+                        window.location = '/site_Log/';
                     }, 1000); // apenas para exibir o loading
 
                 });
