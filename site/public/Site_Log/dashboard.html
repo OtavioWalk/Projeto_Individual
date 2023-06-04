@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+        <div id="container " class="div_container">
+
+            <a href="/site_Log/"><img class="logo" src="../assets/imagens/PS BLOG.png" alt=""></a>
+            <ul>
+                <a href="">
+                    <p>Sobre nós</p>
+                </a>
+                <a href="Testes.html">
+                    <p>Testes</p>
+                </a>
+
+                <a href="../noticias.html">
+                    <p>Notícias</p>
+                </a>
+                <p>|</p>
+                <b>
+                    <p id="nomeExibicao"></p>
+                </b>
+                <a href="/"><button class="btn_Sair">Sair</button></a>
+            </ul>
+
+        </div>
+    </header>
+    <div id="imagemFundo">
+
+        <div class="conteudo">
+            
+            <div class="info1">
+                <span>Você está entre os X % que tiveram o resultado (ALOY)</span>
+
+                <div class="grafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+            </div>
+
+            <div class="info2">
+
+                <span>Você realizou o teste de personalidade em X minutos</span>
+
+                <div class="comentario">
+
+                    <span>Tem alguma sugestão para melhorarmos o nosso site?</span>
+                    <textarea id="comentario_"  rows="5" cols="33"></textarea>
+
+                    <button onclick="">Enviar</button>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+</body>
+<script>
+
+    var nome = sessionStorage.NOME_USUARIO;
+    nomeExibicao.innerHTML = `${nome}`;
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Aloy', 'Jim Sakai', 'Kratos', 'Deacon'],
+            datasets: [{
+                label: 'Resultados',
+                data: [2, 3, 3, 4],
+                backgroundColor: ['magenta', 'Black', 'red', 'green'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>
+
+</html>
