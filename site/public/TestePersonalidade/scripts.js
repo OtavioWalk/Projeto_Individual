@@ -202,21 +202,25 @@ submit5.addEventListener('click', function () {
                 if (totalScore() >= 4 && totalScore() <= 7) {
 
                     alert('Aloy')
+                    var resultFinal = 1
                     window.location.href = "../Resultados/ResultAloy.html"
 
                 } else if (totalScore() >= 8 && totalScore() <= 11) {
 
                     alert(`Deacon`)
+                    var resultFinal = 2
                     window.location.href = "../Resultados/ResultDeacon.html"
 
                 } else if (totalScore() >= 12 && totalScore() <= 15) {
 
                     alert(`Jim`)
+                    var resultFinal = 3
                     window.location.href = "../Resultados/ResultJim.html"
 
                 } else if (totalScore() >= 16 && totalScore() <= 20) {
 
                     alert(`Kratos`)
+                    var resultFinal = 4
                     window.location.href = "../Resultados/ResultKratos.html"
 
                 }
