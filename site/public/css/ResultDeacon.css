@@ -1,5 +1,5 @@
 #imagemFundo {
-    background-image: url(../assets/imagens/Imagens_Result/FimKratos2.png);
+    background-image: url(../assets/imagens/Imagens_Result/FimDeacon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -13,7 +13,7 @@
 
 .div_result {
     display: table;
-    background-color: #332d2a5d;
+    background-color: #574d3c5d;
     flex-direction: column;
     width: 1000px;
     border: solid;
@@ -34,14 +34,14 @@
     padding-left: 60px;
 }
 
-.img_Kratos {
+.img_Aloy {
     width: 30%;
     display: table-cell;
     float: right;
     margin: 0;
 }
 
-.img_Kratos img {
+.img_Aloy img {
     max-width: 100%;
     height: 500px;
     width: 281px;

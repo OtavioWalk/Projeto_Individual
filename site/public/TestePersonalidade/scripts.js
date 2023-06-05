@@ -6,6 +6,8 @@ var question_three = document.getElementById('question-3');
 var question_four = document.getElementById('question-4');
 var question_five = document.getElementById('question-5');
 
+var pontosTotais = 0
+
 function storeAnswer(question_number, event) {
     if (event.target.type === 'radio') {
         console.log(event.target.value);
@@ -131,14 +133,14 @@ submit5.addEventListener('click', function () {
         alert('Selecione uma questão para continuar')
 
     } else {
-    nextQuestion(6);
+        nextQuestion(6);
     }
 })
 
-submit5.addEventListener('click', function () {
-    document.getElementById("printtotalscore").innerHTML = totalScore();
-    document.getElementById("printscoreinfo").innerHTML = getInfoBasedOnScore();
-})
+// submit5.addEventListener('click', function () {
+//     document.getElementById("printtotalscore").innerHTML = totalScore();
+//     document.getElementById("printscoreinfo").innerHTML = getInfoBasedOnScore();
+// })
 
 function growProgressBar(percentage_width) {
     var bar = document.getElementById("progress_bar");
@@ -164,66 +166,62 @@ submit5.addEventListener('click', function () {
 
             if (i == 0) {
 
-                div_imgCarregando.innerHTML = `<img src="" style="border-radius: 50px;">`
+                div_imgCarregando.innerHTML = `<img src="/TestePersonalidade/Carregando%200%25.png" style="border-radius: 50px;">`
                 await timer(2);
 
             } else if (i == 1) {
 
-                div_imgCarregando.innerHTML = `<img src="/assets/imagens/Carregando/Carregando 0%.png" style="border-radius: 50px;">`
+                div_imgCarregando.innerHTML = `<img src="/TestePersonalidade/Carregando%2025%25.png" style="border-radius: 50px;">`
                 await timer(2);
 
             } else if (i == 2) {
 
-                div_imgCarregando.innerHTML = `<img src="/assets/imagens/Carregando/Carregando 50%.png" style="border-radius: 50px;">`
+                div_imgCarregando.innerHTML = `<img src="/TestePersonalidade/Carregando%2050%25.png" style="border-radius: 50px;">`
                 await timer(1);
 
             } else if (i == 3) {
 
-                div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 75%.png" style="border-radius: 50px;">`
+                div_imgCarregando.innerHTML = `<img src="/TestePersonalidade/Carregando%2050%25.png" style="border-radius: 50px;">`
                 await timer(2);
 
             } else if (i == 4) {
 
-                div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 99%.png" style="border-radius: 50px;">`
+                div_imgCarregando.innerHTML = `<img src="/TestePersonalidade/Carregando%2075%25.png" style="border-radius: 50px;">`
                 await timer(1);
 
             } else if (i == 5) {
 
-                div_imgCarregando.innerHTML = `<img src="../assets/imagens/Carregando/Carregando 100%.png" style="border-radius: 50px;">`
+                div_imgCarregando.innerHTML = `<img src="/TestePersonalidade/Carregando%2099%25.png" style="border-radius: 50px;">`
                 await timer(1);
 
             } else if (i == 6) {
 
+                console.log(totalScore())
 
 
+                if (totalScore() >= 4 && totalScore() <= 7) {
 
-                // div_container_29.style.display = "none"
-                // questions_box.style.display = "none"
-                // container.style.display = "none"
+                    alert('Aloy')
+                    window.location.href = "../Resultados/ResultAloy.html"
 
-                // if (totalscore() >= 4 && totalscore() <= 7){
+                } else if (totalScore() >= 8 && totalScore() <= 11) {
 
-                //     alert (`Aloy`)
-                // // window.location.href = "../Teste Bolinhas/Resultado_Aloy"
+                    alert(`Deacon`)
+                    window.location.href = "../Resultados/ResultDeacon.html"
 
-                // }else if (totalscore() >= 8 && totalscore() <= 11) {
+                } else if (totalScore() >= 12 && totalScore() <= 15) {
 
-                //     alert (`Deacon`)
-                //     // div_container_29.style.display = "none"
+                    alert(`Jim`)
+                    window.location.href = "../Resultados/ResultJim.html"
 
-                // }else if (totalscore() >= 12 && totalscore() <= 15) {
+                } else if (totalScore() >= 16 && totalScore() <= 20) {
 
-                //     alert (`Jim`)
-                //     // div_container_29.style.display = "none"
+                    alert(`Kratos`)
+                    window.location.href = "../Resultados/ResultKratos.html"
 
-                // }else if (totalscore() >= 16 && totalscore() <= 20) {
+                }
 
-                //     alert (`Kratos`)
-                //     // div_container_29.style.display = "none"
-
-                // }
-                
-
+                break
             }
 
         }
