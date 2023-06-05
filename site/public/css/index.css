@@ -31,7 +31,7 @@
     height: 910px;
     width: 1500px;
     align-self: center;
-
+    border: solid rgb(0, 0, 0) 5px;
 }
 
 
@@ -96,7 +96,7 @@ a {
 .div_card1 img {
     width: 475px;
     height: 295px;
-
+    border: solid rgb(0, 0, 0) 5px;
 }
 
 
@@ -117,7 +117,7 @@ a {
 .div_card2 img {
     width: 475px;
     height: 295px;
-
+    border: solid rgb(0, 0, 0) 5px;
 }
 
 .div_container2 .div_card3 {
@@ -137,7 +137,7 @@ a {
 .div_card3 img {
     width: 475px;
     height: 295px;
-
+    border: solid rgb(0, 0, 0) 5px;
 }
 
 *::-webkit-scrollbar {

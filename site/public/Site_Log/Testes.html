@@ -28,12 +28,12 @@
                     <p>Testes</p>
                 </a>
 
-                <a href="">
+                <a href="noticias.html">
                     <p>Notícias</p>
                 </a>
                 <p>|</p>
                 <b><p id="nomeExibicao"></p></b>
-                <a href="/"><button class="btn_Sair">Sair</button></a>
+                <a href="/"><button class="btn_Sair" onclick="sair()">Sair</button></a>
             </ul>
 
         </div>
@@ -83,6 +83,13 @@
 
     var nome = sessionStorage.NOME_USUARIO;
     nomeExibicao.innerHTML = `${nome}`;
+
+    function sair() {
+
+        sessionStorage.clear()
+    
+    }
+
 
 </script>
 </html>

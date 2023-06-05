@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/NavBarLog.css">
+    <link rel="stylesheet" href="../css/noticias.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+        <div id="container " class="div_container">
+
+            <a href="/site_Log/"><img class="logo" src="../assets/imagens/PS BLOG.png" alt=""></a>
+            <ul>
+                <a href="">
+                    <p>Sobre nós</p>
+                </a>
+                <a href="Testes.html">
+                    <p>Testes</p>
+                </a>
+
+                <a href="noticias.html">
+                    <p>Notícias</p>
+                </a>
+                <p>|</p>
+                <b>
+                    <p id="nomeExibicao"></p>
+                </b>
+                <a href="/"><button class="btn_Sair" onclick="sair()">Sair</button></a>
+            </ul>
+
+        </div>
+    </header>
+
+    <div class="div_container1">
+
+        <div class="div_centralizado">
+            <h1>Notícias recentes</h1>
+            <div class="div_video">
+                <iframe width="713" height="401" src="https://www.youtube.com/embed/KxZ1i-IC4xo"
+                    title="Marvel&#39;s Spider-Man 2 - Trailer de Revelação de Gameplay | PS5" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+            </div>
+
+            <span>Marvel's Spider-Man 2 - Trailer de Revelação de Gameplay | PS5</span>
+
+
+            imagem outra noticia
+
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+<script>
+    var nome = sessionStorage.NOME_USUARIO;
+    nomeExibicao.innerHTML = `${nome}`;
+
+    function sair() {
+
+        sessionStorage.clear()
+
+    }
+</script>
+
+</html>

@@ -29,12 +29,14 @@
                     <p>Testes</p>
                 </a>
 
-                <a href="../noticias.html">
+                <a href="noticias.html">
                     <p>Notícias</p>
                 </a>
                 <p>|</p>
-                <b><p id="nomeExibicao"></p></b>
-                <a href="/"><button class="btn_Sair">Sair</button></a>
+                
+                    <b><p id="nomeExibicao"></p></b>
+                
+                <a href="/"><button class="btn_Sair" onclick="sair()">Sair</button></a>
             </ul>
 
         </div>
@@ -48,9 +50,11 @@
 
         <img src="/assets/imagens/Img_Página inicial/image.png" alt="">
 
-        <b><a href="https://meups.com.br/noticias/marvels-spider-man-2-o-melhor-da-insomniac/#:~:text=A%20Insomniac%20Games%20continua%20trabalhando,jogo%20j%C3%A1%20feito%E2%80%9D%20pela%20desenvolvedora.">Marvel’s Spider-Man 2: dev quer entregar “o melhor jogo” já feito pelo estúdio</a></b>
+        <b><a
+                href="https://meups.com.br/noticias/marvels-spider-man-2-o-melhor-da-insomniac/#:~:text=A%20Insomniac%20Games%20continua%20trabalhando,jogo%20j%C3%A1%20feito%E2%80%9D%20pela%20desenvolvedora.">Marvel’s
+                Spider-Man 2: dev quer entregar “o melhor jogo” já feito pelo estúdio</a></b>
 
-<!-- Fim Notícia em destaque  -->
+        <!-- Fim Notícia em destaque  -->
 
         <div class="div_linha"></div>
 
@@ -58,11 +62,17 @@
 
         <div class="div_container2">
 
-            <div class="div_card1"><img src="/assets/imagens/Img_Página inicial/Teste1.png" alt=""><a href="../TestePersonalidade/Teste_Personalidade.html">Qual personagem dos exclusivos PlayStation você é ?</a></div>
+            <div class="div_card1"><img src="/assets/imagens/Img_Página inicial/Teste1.png" alt=""><a
+                    href="../TestePersonalidade/Teste_Personalidade.html">Qual personagem dos exclusivos PlayStation
+                    você é ?</a></div>
 
-            <div class="div_card2"><img src="/assets/imagens/Img_Página inicial/Teste2.png" alt=""><a href="https://www.legiaodosherois.com.br/quiz/tipo-de-gamer.html"> Que tipo de gamer você é ?</a></div>
+            <div class="div_card2"><img src="/assets/imagens/Img_Página inicial/Teste2.png" alt=""><a
+                    href="https://www.legiaodosherois.com.br/quiz/tipo-de-gamer.html"> Que tipo de gamer você é ?</a>
+            </div>
 
-            <div class="div_card3"><img src="/assets/imagens/Img_Página inicial/Teste3.png" alt=""><a href="https://pt.quizur.com/trivia/o-quanto-vc-sabe-sobre-god-of-war-TScW"> O quanto você sabe sobre o de God of War ?</a></div>
+            <div class="div_card3"><img src="/assets/imagens/Img_Página inicial/Teste3.png" alt=""><a
+                    href="https://pt.quizur.com/trivia/o-quanto-vc-sabe-sobre-god-of-war-TScW"> O quanto você sabe sobre
+                    o de God of War ?</a></div>
 
         </div>
     </div>
@@ -70,9 +80,14 @@
 
 
 <script>
+    var nome = sessionStorage.NOME_USUARIO;
+    nomeExibicao.innerHTML = `${nome}`;
 
-var nome = sessionStorage.NOME_USUARIO;
-nomeExibicao.innerHTML = `${nome}`;
+    function sair() {
 
+        sessionStorage.clear()
+
+    }
 </script>
+
 </html>

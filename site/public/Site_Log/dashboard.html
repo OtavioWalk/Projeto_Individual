@@ -33,7 +33,7 @@
                 <b>
                     <p id="nomeExibicao"></p>
                 </b>
-                <a href="/"><button class="btn_Sair">Sair</button></a>
+                <a href="/"><button class="btn_Sair" onclick="sair()">Sair</button></a>
             </ul>
 
         </div>
@@ -110,6 +110,13 @@
             }
         }
     });
+
+
+    function sair() {
+
+        sessionStorage.clear()
+    
+    }
 
 </script>
 

@@ -1,4 +1,5 @@
 var medidaModel = require("../models/medidaModel");
+// var graficoModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
 
