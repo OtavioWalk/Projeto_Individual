@@ -3,13 +3,16 @@ var router = express.Router();
 
 var graficoController = require("../controllers/graficoController");
 
-router.post("/cadastrar", function (req, res) {
-    // função a ser chamada quando acessar /carros/cadastrar
-    graficoController.cadastrar(req, res);
+router.get("/", function (req, res) {
+    graficoController.testar(req, res);
 });
 
-router.get("/listar", function (req, res) {
-    // função a ser chamada quando acessar /carros/listar
-    graficoController.listar(req, res);
-});
+
+//Recebendo os dados do html e direcionando para a função cadastrar de graficoController.js
+router.get("/cadastrar", function (req, res) {
+    graficoController.cadastrar(req, res);
+})
+
+
+
 module.exports = router;

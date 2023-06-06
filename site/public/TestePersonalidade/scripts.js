@@ -7,6 +7,7 @@ var question_four = document.getElementById('question-4');
 var question_five = document.getElementById('question-5');
 
 var pontosTotais = 0
+var resultFinal = undefined
 
 function storeAnswer(question_number, event) {
     if (event.target.type === 'radio') {
@@ -197,30 +198,33 @@ submit5.addEventListener('click', function () {
             } else if (i == 6) {
 
                 console.log(totalScore())
-
+                var resultFinal = undefined
 
                 if (totalScore() >= 4 && totalScore() <= 7) {
 
                     alert('Aloy')
-                    var resultFinal = 1
-                    window.location.href = "../Resultados/ResultAloy.html"
+                    resultFinal = `Aloy`
+                    cadastrar()
+                    
+                    
+                    // window.location.href = "../Resultados/ResultAloy.html"
 
                 } else if (totalScore() >= 8 && totalScore() <= 11) {
 
                     alert(`Deacon`)
-                    var resultFinal = 2
+                    var resultFinal = 'Deacon'
                     window.location.href = "../Resultados/ResultDeacon.html"
 
                 } else if (totalScore() >= 12 && totalScore() <= 15) {
 
                     alert(`Jim`)
-                    var resultFinal = 3
+                    var resultFinal = `Jim`
                     window.location.href = "../Resultados/ResultJim.html"
 
                 } else if (totalScore() >= 16 && totalScore() <= 20) {
 
                     alert(`Kratos`)
-                    var resultFinal = 4
+                    var resultFinal = `Kratos`
                     window.location.href = "../Resultados/ResultKratos.html"
 
                 }
@@ -236,3 +240,61 @@ submit5.addEventListener('click', function () {
 
 
 })
+
+function cadastrar() {
+    
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var fkUsuarioVar = sessionStorage.ID_USUARIO;
+
+    var graficoVar = resultFinal;
+    
+
+    if (graficoVar == "" ||  fkUsuarioVar == ``) {
+        
+        console.log("Mensagem de erro para todos os campos em branco");
+
+        
+        return false;
+    }
+    
+
+    // Enviando o valor da nova input
+    fetch("/grafico/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            graficoServer: graficoVar,
+            fkUsuarioServer: fkUsuarioVar
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            
+
+            console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
+            // setTimeout(() => {
+            //     window.location = "login.html";
+            // }, "2000")
+
+            // limparFormulario();
+            // finalizarAguardar();
+        } 
+        // else {
+        //     throw ("Houve um erro ao tentar realizar o cadastro!");
+        // }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+    });
+
+    return false;
+}
