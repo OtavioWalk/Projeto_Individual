@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
 
 
 //Recebendo os dados do html e direcionando para a função cadastrar de graficoController.js
-router.get("/cadastrar", function (req, res) {
+router.post("/cadastrar/:fkUsuario/:resultadoTeste", function (req, res) {
     graficoController.cadastrar(req, res);
 })
 

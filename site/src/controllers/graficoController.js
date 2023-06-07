@@ -1,10 +1,10 @@
 var graficoModel = require("../models/graficoModel");
 
 
-function testar(req, res) {
-    console.log("ENTRAMOS NA usuarioController");
-    res.json("ESTAMOS FUNCIONANDO!");
-}
+// function testar(req, res) {
+//     console.log("ENTRAMOS NA usuarioController");
+//     res.json("ESTAMOS FUNCIONANDO!");
+// }
 
 // function listar(req, res) {
 //     graficoModel.listar()
@@ -28,16 +28,16 @@ function testar(req, res) {
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
 
-    var fkUsuario = req.body.fkUsuarioServer;
-    var grafico = req.body.graficoServer;
+    var fkUsuario = req.params.fkUsuario;
+    var resultadoTeste = req.params.resultadoTeste;
 
     // Faça as validações dos valores
-    if (grafico == undefined) {
+    if (resultadoTeste == undefined) {
         res.status(400).send("Seu nome está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo graficoModel.js
-        graficoModel.cadastrar(idResultado, fkUsuario, resultado)
+        graficoModel.cadastrar(fkUsuario, resultadoTeste)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -56,6 +56,6 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    cadastrar,
-    testar,
+    cadastrar
+    // testar,
 }
