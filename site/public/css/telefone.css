@@ -1,0 +1,72 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#imagemFundo {
+    background-image: url(../assets/imagens/FundoCadastro.png);
+    background-repeat: no-repeat;
+    background-size: 100% 1400px;
+}
+
+.div_container3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.div_telefone {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    width: 500px;
+    border: solid;
+    align-items: center;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.div_telefone input {
+    width: 80%;
+}
+
+.div_telefone span {
+    display: flex;
+    width: 100%;
+
+text-align: center;
+}
+
+.div_telefone a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+input {
+
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 50px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+    background-color: #D9D9D9;
+}
+
+span {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+button {
+    padding: 15px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    font-size: 25px;
+}
+
+h1 {
+    text-align: center;
+}
