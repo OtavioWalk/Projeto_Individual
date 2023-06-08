@@ -16,3 +16,22 @@ router.post("/cadastrar/:fkUsuario/:resultadoTeste", function (req, res) {
 
 
 module.exports = router;
+
+
+
+
+
+var express = require("express");
+var router = express.Router();
+
+var graficoController = require("../controllers/graficoController");
+
+router.get("/buscarUltimasMedidas/:Resultado/:Quantidade", function (req, res) {
+   graficoController.buscarUltimasMedidas(req, res);
+});
+
+// router.get("/tempo-real/:idAquario", function (req, res) {
+//    graficoController.buscarMedidasEmTempoReal(req, res);
+// })
+
+module.exports = router;

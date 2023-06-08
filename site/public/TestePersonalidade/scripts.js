@@ -205,26 +205,31 @@ submit5.addEventListener('click', function () {
                     resultFinal = `Aloy`
                     alert(resultFinal)
                     cadastrar(idUsuario, resultFinal);
-                    
-                    
-                    // window.location.href = "../Resultados/ResultAloy.html"
+
+
+                    window.location.href = "../Resultados/ResultAloy.html"
 
                 } else if (totalScore() >= 8 && totalScore() <= 11) {
 
-                    alert(`Deacon`)
-                    var resultFinal = 'Deacon'
+                    resultFinal = `Deacon`
+                    alert(resultFinal)
+                    cadastrar(idUsuario, resultFinal);
+
                     window.location.href = "../Resultados/ResultDeacon.html"
 
                 } else if (totalScore() >= 12 && totalScore() <= 15) {
 
-                    alert(`Jim`)
-                    var resultFinal = `Jim`
+                    resultFinal = `Jim Sakai`
+                    alert(resultFinal)
+                    cadastrar(idUsuario, resultFinal);
                     window.location.href = "../Resultados/ResultJim.html"
 
                 } else if (totalScore() >= 16 && totalScore() <= 20) {
 
-                    alert(`Kratos`)
-                    var resultFinal = `Kratos`
+                    resultFinal = `Kratos`
+                    alert(resultFinal)
+                    cadastrar(idUsuario, resultFinal);
+
                     window.location.href = "../Resultados/ResultKratos.html"
 
                 }
@@ -242,20 +247,20 @@ submit5.addEventListener('click', function () {
 })
 var graficoVar = '';
 function cadastrar(fkUsuario, resultadoTeste) {
-    
+
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
 
 
-    if (fkUsuario == "" ||  resultadoTeste == ``) {
-        
+    if (fkUsuario == "" || resultadoTeste == ``) {
+
         console.log("Mensagem de erro para todos os campos em branco");
 
-        
+
         return false;
     }
-    
+
 
     // Enviando o valor da nova input
     fetch(`/grafico/cadastrar/${fkUsuario}/${resultadoTeste}`, {
@@ -274,12 +279,12 @@ function cadastrar(fkUsuario, resultadoTeste) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            
+
 
             console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
 
-        } 
+        }
 
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);

@@ -7,7 +7,7 @@ var mysql = require("mysql2");
 var mySqlConfig = {
     host: "localhost",
     database: "psblog",
-    user: "aluno",
+    user: "root",
     password: "sptech",
 };
 

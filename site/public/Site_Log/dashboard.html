@@ -41,7 +41,7 @@
     <div id="imagemFundo">
 
         <div class="conteudo">
-            
+
             <div class="info1">
                 <span>Você está entre os X % que tiveram o resultado (ALOY)</span>
 
@@ -50,35 +50,8 @@
                 </div>
 
             </div>
-
-            <div class="info2">
-
-                <span>Você realizou o teste de personalidade em X minutos</span>
-
-                <div class="comentario">
-
-                    <span>Tem alguma sugestão para melhorarmos o nosso site?</span>
-                    <textarea id="comentario_"  rows="5" cols="33"></textarea>
-
-                    <button onclick="">Enviar</button>
-
-                </div>
-
-
-
-            </div>
-
-
-
-
-
-
         </div>
-
-
-
-
-
+    </div>
     </div>
 
 
@@ -86,37 +59,179 @@
 </body>
 <script>
 
+var global = undefined
+
     var nome = sessionStorage.NOME_USUARIO;
     nomeExibicao.innerHTML = `${nome}`;
 
-    const ctx = document.getElementById('myChart');
+    
 
-    new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['Aloy', 'Jim Sakai', 'Kratos', 'Deacon'],
-            datasets: [{
-                label: 'Resultados',
-                data: [2, 3, 3, 4],
-                backgroundColor: ['magenta', 'Black', 'red', 'green'],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    // const ctx = document.getElementById('myChart');
+
+    // new Chart(ctx, {
+    //     type: 'pie',
+    //     data: {
+    //         labels: ['Aloy', 'Jim Sakai', 'Kratos', 'Deacon'],
+    //         datasets: [{
+    //             label: 'Resultados',
+    //             data: [2, 3, 3, 4],
+    //             backgroundColor: ['magenta', 'Black', 'red', 'green'],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
 
 
     function sair() {
 
         sessionStorage.clear()
-    
+
     }
+
+
+    window.onload = function iniciar() {
+        var Resultado = undefined
+        var Quantidade = undefined
+        
+        obterDadosGrafico()
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function obterDadosGrafico(Resultado, Quantidade) {
+
+        fetch(`/grafico/buscarUltimasMedidas/${Resultado}/${Quantidade}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(Resultado, Quantidade);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(Resultado, Quantidade) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Aloy', 'Jim Sakai', 'Kratos', 'Deacon'],
+                datasets: [{
+                    label: 'Resultados',
+                    data: [2, 3, 5, 4],
+                    backgroundColor: ['magenta', 'Black', 'red', 'green'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+        // let dados = {
+        //     labels: labels,
+        //     datasets: [{
+        //         label: 'Umidade',
+        //         data: [],
+        //         fill: false,
+        //         borderColor: 'rgb(75, 192, 192)',
+        //         tension: 0.1
+        //     },
+        //     {
+        //         label: 'Temperatura',
+        //         data: [],
+        //         fill: false,
+        //         borderColor: 'rgb(199, 52, 52)',
+        //         tension: 0.1
+        //     }]
+        // };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        global = resposta
+        console.log(global)
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.momento_grafico);
+            dados.datasets[0].data.push(registro.umidade);
+
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        // const config = {
+        //     type: 'line',
+        //     data: dados,
+        // };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas${idAquario}`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+    }
+
 
 </script>
 
