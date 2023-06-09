@@ -43,7 +43,7 @@
         <div class="conteudo">
 
             <div class="info1">
-                <span>Você está entre os X % que tiveram o resultado (ALOY)</span>
+                <span>Você está entre os <span id="porCento"></span>% que tiveram o resultado (<span id="nomeP"></span>)</span>
 
                 <div class="grafico">
                     <canvas id="myChart"></canvas>
@@ -59,12 +59,12 @@
 </body>
 <script>
 
-var global = undefined
+
 
     var nome = sessionStorage.NOME_USUARIO;
     nomeExibicao.innerHTML = `${nome}`;
 
-    
+
 
     // const ctx = document.getElementById('myChart');
 
@@ -97,9 +97,8 @@ var global = undefined
 
 
     window.onload = function iniciar() {
-        var Resultado = undefined
-        var Quantidade = undefined
-        
+
+
         obterDadosGrafico()
     }
 
@@ -118,18 +117,19 @@ var global = undefined
 
 
 
+    var global;
 
 
+    function obterDadosGrafico() {
 
-    function obterDadosGrafico(Resultado, Quantidade) {
-
-        fetch(`/grafico/buscarUltimasMedidas/${Resultado}/${Quantidade}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/grafico/buscarUltimasMedidas/`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-
-                    plotarGrafico(Resultado, Quantidade);
+                    
+                    global = resposta
+                    console.log(global, 'global')
+                    plotarGrafico(resposta);
 
                 });
             } else {
@@ -145,7 +145,7 @@ var global = undefined
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(Resultado, Quantidade) {
+    function plotarGrafico(resposta) {
 
         console.log('iniciando plotagem do gráfico...');
 
@@ -159,10 +159,10 @@ var global = undefined
         new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Aloy', 'Jim Sakai', 'Kratos', 'Deacon'],
+                labels: ['Aloy', 'Kratos', 'Deacon', 'Jim Sakai'],
                 datasets: [{
                     label: 'Resultados',
-                    data: [2, 3, 5, 4],
+                    data: [global[0].Quantidade, global[1].Quantidade, global[2].Quantidade, global[3].Quantidade],
                     backgroundColor: ['magenta', 'Black', 'red', 'green'],
                     borderWidth: 1
                 }]
@@ -177,37 +177,35 @@ var global = undefined
         });
 
 
-        // let dados = {
-        //     labels: labels,
-        //     datasets: [{
-        //         label: 'Umidade',
-        //         data: [],
-        //         fill: false,
-        //         borderColor: 'rgb(75, 192, 192)',
-        //         tension: 0.1
-        //     },
-        //     {
-        //         label: 'Temperatura',
-        //         data: [],
-        //         fill: false,
-        //         borderColor: 'rgb(199, 52, 52)',
-        //         tension: 0.1
-        //     }]
-        // };
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Umidade',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            },
+            {
+                label: 'Temperatura',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(199, 52, 52)',
+                tension: 0.1
+            }]
+        };
 
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-        global = resposta
-        console.log(global)
         console.log(resposta)
 
         // Inserindo valores recebidos em estrutura para plotar o gráfico
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
+        // for (i = 0; i < resposta.length; i++) {
+        //     var registro = resposta[i];
+        //     labels.push(registro.momento_grafico);
+        //     dados.datasets[0].data.push(registro.umidade);
 
-        }
+        // }
 
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
@@ -224,12 +222,19 @@ var global = undefined
         // };
 
         // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById(`myChartCanvas${idAquario}`),
-            config
-        );
+        
+nomeP.innerHTML = sessionStorage.nomePersonagem
 
-        setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+var soma = Number(global[0].Quantidade + global[1].Quantidade + global[2].Quantidade + global[3].Quantidade)
+        console.log(soma)
+
+if (sessionStorage.nomePersonagem == 'Aloy'){
+    var percent = (global[0].Quantidade * 100)/soma
+
+    porCento.innerHTML = percent
+
+}
+        
     }
 
 

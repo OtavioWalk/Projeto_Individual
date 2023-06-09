@@ -204,6 +204,7 @@ submit5.addEventListener('click', function () {
 
                     resultFinal = `Aloy`
                     alert(resultFinal)
+                    sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
 
 
@@ -213,6 +214,7 @@ submit5.addEventListener('click', function () {
 
                     resultFinal = `Deacon`
                     alert(resultFinal)
+                    sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
 
                     window.location.href = "../Resultados/ResultDeacon.html"
@@ -221,16 +223,18 @@ submit5.addEventListener('click', function () {
 
                     resultFinal = `Jim Sakai`
                     alert(resultFinal)
+                    sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
-                    window.location.href = "../Resultados/ResultJim.html"
+                window.location.href = "../Resultados/ResultJim.html"
 
                 } else if (totalScore() >= 16 && totalScore() <= 20) {
 
                     resultFinal = `Kratos`
                     alert(resultFinal)
+                    sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
 
-                    window.location.href = "../Resultados/ResultKratos.html"
+                window.location.href = "../Resultados/ResultKratos.html"
 
                 }
 

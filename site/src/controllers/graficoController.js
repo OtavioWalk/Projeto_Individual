@@ -59,12 +59,11 @@ function cadastrar(req, res) {
 function buscarUltimasMedidas(req, res) {
 
 
-    var Resultado = req.params.Resultado;
-    var Quantidade = req.params.Quantidade;
 
-    console.log(`Recuperando as ultimas ${Resultado, Quantidade} medidas`);
 
-    graficoModel.buscarUltimasMedidas(Resultado, Quantidade).then(function (resultado) {
+    console.log(`Recuperando as ultimas medidas`);
+
+    graficoModel.buscarUltimasMedidas().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
