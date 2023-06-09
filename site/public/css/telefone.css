@@ -2,6 +2,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+
+margin: 0px;
+
+}
+
 #imagemFundo {
     background-image: url(../assets/imagens/FundoCadastro.png);
     background-repeat: no-repeat;
@@ -39,6 +45,13 @@ text-align: center;
 .div_telefone a {
     text-decoration: none;
     color: #ffffff;
+    
+}
+
+.div_telefone a span{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
 }
 
 input {

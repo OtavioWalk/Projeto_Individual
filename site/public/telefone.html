@@ -43,13 +43,14 @@
 
                 <h1>Telefone</h1>
 
-                <span>Para mais segurança Insira um telefone</span>
+                <span>Para mais segurança Insira o seu telefone</span>
 
                 <input id="telefone_input" placeholder="11966585483">
 
                 <br><br>
                 <div> <button onclick="proximo()">Próximo</button></div>
                 <br>
+                <a href="Site_Log/index.html"><span>Já registrei o meu telefone</span></a>
                 <br>
             </div>
         </div>
@@ -59,12 +60,80 @@
 </body>
 <script>
 
+var idUsuario = undefined
+var telefoneInicial = undefined
+
 
 function proximo() {
 
+idUsuario = sessionStorage.ID_USUARIO;
+telefoneInicial = telefone_input.value
+
+
 // Ir para a tela Login
 
+cadastrar(idUsuario, telefoneInicial);
+
 }
+
+
+
+function cadastrar(fkUsuario, telefoneFinal) {
+
+
+//Recupere o valor da nova input pelo nome do id
+// Agora vá para o método fetch logo abaixo
+
+
+if (fkUsuario == "" || telefoneFinal == ``) {
+
+    console.log("Mensagem de erro para todos os campos em branco");
+
+
+    return false;
+}
+
+
+// Enviando o valor da nova input
+fetch(`/telefone/cadastrar/${fkUsuario}/${telefoneFinal}`, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    // body: JSON.stringify({
+    //     // crie um atributo que recebe o valor recuperado aqui
+    //     // Agora vá para o arquivo routes/usuario.js
+    //     graficoServer: graficoVar,
+    //     fkUsuarioServer: fkUsuarioVar
+    // })
+}).then(function (resposta) {
+
+    console.log("resposta: ", resposta);
+
+    if (resposta.ok) {
+
+
+        console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+        window.location = "Site_Log/.html"
+
+    }
+
+}).catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+
+});
+
+return false;
+}
+
+
+
+
+
+
+
+
+
 
 
     // function entrar() {
