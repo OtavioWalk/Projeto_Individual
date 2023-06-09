@@ -39,18 +39,22 @@
         </div>
     </header>
     <div id="imagemFundo">
-
+        <br><br><br>
         <div class="conteudo">
 
             <div class="info1">
-                <span>Você está entre os <span id="porCento"></span>% que tiveram o resultado (<span id="nomeP"></span>)</span>
+                <span><span id="porCento"></span><span id="nomeP"></span></span>
+
 
                 <div class="grafico">
+                    <br><br>
+                    
                     <canvas id="myChart"></canvas>
                 </div>
 
             </div>
         </div>
+        <br><br><br>
     </div>
     </div>
 
@@ -66,28 +70,6 @@
 
 
 
-    // const ctx = document.getElementById('myChart');
-
-    // new Chart(ctx, {
-    //     type: 'pie',
-    //     data: {
-    //         labels: ['Aloy', 'Jim Sakai', 'Kratos', 'Deacon'],
-    //         datasets: [{
-    //             label: 'Resultados',
-    //             data: [2, 3, 3, 4],
-    //             backgroundColor: ['magenta', 'Black', 'red', 'green'],
-    //             borderWidth: 1
-    //         }]
-    //     },
-    //     options: {
-    //         scales: {
-    //             y: {
-    //                 beginAtZero: true
-    //             }
-    //         }
-    //     }
-    // });
-
 
     function sair() {
 
@@ -98,27 +80,10 @@
 
     window.onload = function iniciar() {
 
-
         obterDadosGrafico()
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     var global;
-
 
     function obterDadosGrafico() {
 
@@ -126,7 +91,7 @@
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    
+
                     global = resposta
                     console.log(global, 'global')
                     plotarGrafico(resposta);
@@ -177,67 +142,70 @@
         });
 
 
-        let dados = {
-            labels: labels,
-            datasets: [{
-                label: 'Umidade',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            },
-            {
-                label: 'Temperatura',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(199, 52, 52)',
-                tension: 0.1
-            }]
-        };
+        // let dados = {
+        //     labels: labels,
+        //     datasets: [{
+        //         label: 'Umidade',
+        //         data: [],
+        //         fill: false,
+        //         borderColor: 'rgb(75, 192, 192)',
+        //         tension: 0.1
+        //     },
+        //     {
+        //         label: 'Temperatura',
+        //         data: [],
+        //         fill: false,
+        //         borderColor: 'rgb(199, 52, 52)',
+        //         tension: 0.1
+        //     }]
+        // };
 
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
 
-        // Inserindo valores recebidos em estrutura para plotar o gráfico
-        // for (i = 0; i < resposta.length; i++) {
-        //     var registro = resposta[i];
-        //     labels.push(registro.momento_grafico);
-        //     dados.datasets[0].data.push(registro.umidade);
-
-        // }
 
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
         console.log('Labels:')
         console.log(labels)
         console.log('Dados:')
-        console.log(dados.datasets)
+
         console.log('----------------------------------------------')
 
-        // Criando estrutura para plotar gráfico - config
-        // const config = {
-        //     type: 'line',
-        //     data: dados,
-        // };
 
-        // Adicionando gráfico criado em div na tela
-        
-nomeP.innerHTML = sessionStorage.nomePersonagem
-
-var soma = Number(global[0].Quantidade + global[1].Quantidade + global[2].Quantidade + global[3].Quantidade)
+        var soma = Number(global[0].Quantidade + global[1].Quantidade + global[2].Quantidade + global[3].Quantidade)
         console.log(soma)
 
-if (sessionStorage.nomePersonagem == 'Aloy'){
-    var percent = (global[0].Quantidade * 100)/soma
+        if (sessionStorage.nomePersonagem == 'Aloy') {
+            var percent = ((global[0].Quantidade * 100) / soma).toFixed(1)
 
-    porCento.innerHTML = percent
+            porCento.innerHTML = 'Você está entre os ' + percent + '% que tiveram o resultado ' + sessionStorage.nomePersonagem
 
-}
-        
+        }
+
+        if (sessionStorage.nomePersonagem == 'Kratos') {
+            var percent = (global[1].Quantidade * 100) / soma
+
+            porCento.innerHTML = 'Você está entre os ' + percent + '% que tiveram o resultado ' + sessionStorage.nomePersonagem
+
+        }
+
+        if (sessionStorage.nomePersonagem == 'Deacon') {
+            var percent = (global[2].Quantidade * 100) / soma
+
+            porCento.innerHTML = 'Você está entre os ' + percent + '% que tiveram o resultado ' + sessionStorage.nomePersonagem
+
+        }
+
+        if (sessionStorage.nomePersonagem == 'Jim Sakai') {
+            var percent = (global[3].Quantidade * 100) / soma
+
+            porCento.innerHTML = 'Você está entre os ' + percent + '% que tiveram o resultado ' + sessionStorage.nomePersonagem
+
+        }
+
     }
 
-
 </script>
-
 </html>
