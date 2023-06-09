@@ -6,6 +6,10 @@
   background-size: 100% 100%;
 }
 
+body {
+  zoom: 1.25 /* Coloca o zoom em 125% */
+}
+
 .container {
   display: flex;
   position: relative;

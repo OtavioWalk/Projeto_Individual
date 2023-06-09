@@ -2,7 +2,7 @@
 
     display: flex;
     flex-direction: column;
-    height: 2260px;
+    height: 2400px;
     width: auto;
     background-color: #001329;
 
@@ -63,7 +63,20 @@ iframe {
 
 }
 
+.div_linha {
 
+    height: 3px;
+    width: 100%;
+    background-color: #696969;
+    align-self: center;
+
+}
+
+a {
+text-decoration: none;
+color: #ffffff;
+font-family: 'Roboto', sans-serif;
+}
 
 
 *::-webkit-scrollbar {

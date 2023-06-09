@@ -6,6 +6,8 @@ body {
 
 margin: 0px;
 
+    zoom: 1 /* Coloca o zoom em 200% */
+
 }
 
 #imagemFundo {

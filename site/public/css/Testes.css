@@ -1,3 +1,8 @@
+body {
+    zoom: 1 /* Coloca o zoom em 200% */
+}
+
+
 .div_container4 {
     display: flex;
     height: 1000px;

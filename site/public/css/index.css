@@ -13,6 +13,11 @@
 
 }
 
+body {
+    zoom: 1 /* Coloca o zoom em 100% */
+}
+
+
 .div_container1 span {
 
     color: #ffffff;
