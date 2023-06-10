@@ -1,7 +1,3 @@
-
-
-/* fim da navbar */
-
 /* inicio Notícia em destaque */
 .div_container1 {
 
@@ -10,13 +6,13 @@
     height: 2260px;
     width: auto;
     background-color: #001329;
-
 }
 
 body {
-    zoom: 1 /* Coloca o zoom em 100% */
-}
 
+    zoom: 1
+        /* Coloca o zoom em 100% */
+}
 
 .div_container1 span {
 
@@ -39,9 +35,6 @@ body {
     border: solid rgb(0, 0, 0) 5px;
 }
 
-
-
-
 .div_container1 b {
 
     color: #ffffff;
@@ -58,27 +51,26 @@ body {
 
 /* fim Notícia em destaque */
 
-
 .div_linha {
 
     height: 3px;
     width: 1550px;
     background-color: #696969;
     align-self: center;
-
 }
 
 .div_container2 {
+
     width: 100%;
     margin: 0px;
     display: flex;
     justify-content: space-evenly;
-
 }
 
 
 
 .div_container2 .div_card1 {
+
     background-color: #001329;
     padding: 10px;
     width: 475px;
@@ -89,7 +81,6 @@ body {
     text-align: start;
     font-size: 53px;
     font-family: 'Roboto', sans-serif;
-
 }
 
 a {
@@ -99,6 +90,7 @@ a {
 }
 
 .div_card1 img {
+
     width: 475px;
     height: 295px;
     border: solid rgb(0, 0, 0) 5px;
@@ -106,6 +98,7 @@ a {
 
 
 .div_container2 .div_card2 {
+
     background-color: #001329;
     padding: 10px;
     width: 475px;
@@ -116,16 +109,17 @@ a {
     text-align: start;
     font-size: 53px;
     font-family: 'Roboto', sans-serif;
-
 }
 
 .div_card2 img {
+
     width: 475px;
     height: 295px;
     border: solid rgb(0, 0, 0) 5px;
 }
 
 .div_container2 .div_card3 {
+
     background-color: #001329;
     padding: 10px;
     width: 475px;
@@ -136,25 +130,28 @@ a {
     text-align: start;
     font-size: 53px;
     font-family: 'Roboto', sans-serif;
-
 }
 
 .div_card3 img {
+
     width: 475px;
     height: 295px;
     border: solid rgb(0, 0, 0) 5px;
 }
 
 *::-webkit-scrollbar {
+
     width: 10px;
-  }
-  
-  *::-webkit-scrollbar-track {
+}
+
+*::-webkit-scrollbar-track {
+
     background: #001329;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: #050f6e;  
+}
+
+*::-webkit-scrollbar-thumb {
+
+    background-color: #050f6e;
     border-radius: 20px;
     border: 4px solid #040d58;
-  }
+}

@@ -1,10 +1,12 @@
 #imagemFundo {
+
     background-image: url(../assets/imagens/Imagens_Result/FimDeacon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .div_container3 {
+
     display: flex;
     width: 100%;
     justify-content: center;
@@ -12,6 +14,7 @@
 
 
 .div_result {
+
     display: table;
     background-color: #574d3c5d;
     flex-direction: column;
@@ -21,10 +24,10 @@
     align-items: center;
     border-radius: 20px;
     color: #000000;
-    
 }
 
 .div_texto {
+
     width: 60%;
     display: table-cell;
     float: left;
@@ -38,10 +41,10 @@
 
     font-size: 50px;
     font-weight: 500;
-
 }
 
 .img_Aloy {
+
     width: 30%;
     display: table-cell;
     float: right;
@@ -49,6 +52,7 @@
 }
 
 .img_Aloy img {
+
     max-width: 100%;
     height: 500px;
     width: 281px;
@@ -60,6 +64,7 @@
 }
 
 h1 {
+
     text-align: center;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 15px;
@@ -76,11 +81,9 @@ button {
     background-color: #ffffff81;
     font-family: 'Roboto', sans-serif;
     float: right;
-
 }
 
 span {
 
-    padding-bottom: 10px ;
-
+    padding-bottom: 10px;
 }

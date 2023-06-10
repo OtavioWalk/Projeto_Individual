@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/NavBarLog.css">
     <link rel="stylesheet" href="../css/index.css">
 
-    <title>Document</title>
+    <title>Tela inicial</title>
 </head>
 
 <body>
@@ -33,9 +33,11 @@
                     <p>Notícias</p>
                 </a>
                 <p>|</p>
-                
-                    <b><p id="nomeExibicao"></p></b>
-                
+
+                <b>
+                    <p id="nomeExibicao"></p>
+                </b>
+
                 <a href="/"><button class="btn_Sair" onclick="sair()">Sair</button></a>
             </ul>
 
@@ -58,6 +60,8 @@
 
         <div class="div_linha"></div>
 
+        <!-- Início dos Testes  -->
+
         <b>Testes de personalidade e conhecimento</b>
 
         <div class="div_container2">
@@ -76,10 +80,16 @@
 
         </div>
     </div>
+
+    <!-- Fim dos Testes  -->
+
 </body>
 
 
 <script>
+
+    // Início do script para guardar o nome do usuario e limpar o sessionStorage
+
     var nome = sessionStorage.NOME_USUARIO;
     nomeExibicao.innerHTML = `${nome}`;
 
@@ -88,6 +98,9 @@
         sessionStorage.clear()
 
     }
+
+    // Fim do script para guardar o nome do usuario e limpar o sessionStorage
+
 </script>
 
 </html>

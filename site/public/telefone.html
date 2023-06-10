@@ -15,26 +15,7 @@
 
 <body>
 
-    <!-- <header>
-
-        <div id="container " class="div_container">
-
-            <a href="/index.html"><img class="logo" src="/assets/imagens/PS BLOG.png" alt=""></a>
-            <ul>
-                <a href="">
-                    <p>Sobre nós</p>
-                </a>
-                <a href="/Testes/Testes.html"><p>Testes</p>
-                </a>
-                <a href=""><p>Notícias</p>
-                </a>
-                <p>|</p>
-                <a href="/login.html"><button class="btn_Entrar">Entrar</button></a>
-                <a href="/cadastro.html"><button class="btn_Registrar">Registrar</button></a>
-            </ul>
-
-        </div>
-    </header> -->
+    <!-- Início do telefone -->
 
     <div id="imagemFundo">
         <br><br><br><br><br><br><br><br><br><br>
@@ -57,150 +38,73 @@
         <br><br><br><br><br><br><br><br><br><br>
     </div>
 
+    <!-- Fim do telefone -->
+
 </body>
 <script>
 
-var idUsuario = undefined
-var telefoneInicial = undefined
+    // Início do script para cadastrar o telefone
+
+    var idUsuario = undefined
+    var telefoneInicial = undefined
+
+    function proximo() {
+
+        idUsuario = sessionStorage.ID_USUARIO;
+        telefoneInicial = telefone_input.value
 
 
-function proximo() {
-
-idUsuario = sessionStorage.ID_USUARIO;
-telefoneInicial = telefone_input.value
-
-
-// Ir para a tela Login
-
-cadastrar(idUsuario, telefoneInicial);
-
-}
-
-
-
-function cadastrar(fkUsuario, telefoneFinal) {
-
-
-//Recupere o valor da nova input pelo nome do id
-// Agora vá para o método fetch logo abaixo
-
-
-if (fkUsuario == "" || telefoneFinal == ``) {
-
-    console.log("Mensagem de erro para todos os campos em branco");
-
-
-    return false;
-}
-
-
-// Enviando o valor da nova input
-fetch(`/telefone/cadastrar/${fkUsuario}/${telefoneFinal}`, {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    // body: JSON.stringify({
-    //     // crie um atributo que recebe o valor recuperado aqui
-    //     // Agora vá para o arquivo routes/usuario.js
-    //     graficoServer: graficoVar,
-    //     fkUsuarioServer: fkUsuarioVar
-    // })
-}).then(function (resposta) {
-
-    console.log("resposta: ", resposta);
-
-    if (resposta.ok) {
-
-
-        console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
-        window.location = "../Site_Log/"
+        cadastrar(idUsuario, telefoneInicial);
 
     }
 
-}).catch(function (resposta) {
-    console.log(`#ERRO: ${resposta}`);
-
-});
-
-return false;
-}
 
 
+    function cadastrar(fkUsuario, telefoneFinal) {
 
 
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
 
 
+        if (fkUsuario == "" || telefoneFinal == ``) {
+
+            console.log("Mensagem de erro para todos os campos em branco");
 
 
+            return false;
+        }
 
 
+        // Enviando o valor da nova input
+        fetch(`/telefone/cadastrar/${fkUsuario}/${telefoneFinal}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-    // function entrar() {
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
 
 
-    //     var emailVar = email_input.value;
-    //     var senhaVar = senha_input.value;
-        
+                console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                window.location = "../Site_Log/"
 
-    //     if (emailVar == "" || senhaVar == "") {
-    //         alert('Insira os dados corretamente')
-    //         return false;
-    //     }
-    //     else {
+            }
 
-    //     }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
 
-    //     console.log("FORM LOGIN: ", emailVar);
-    //     console.log("FORM SENHA: ", senhaVar);
+        });
 
-    //     fetch("/usuarios/autenticar", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             emailServer: emailVar,
-    //             senhaServer: senhaVar
-    //         })
-    //     }).then(function (resposta) {
-    //         console.log("ESTOU NO THEN DO entrar()!")
+        return false;
+    }
 
-    //         if (resposta.ok) {
-    //             console.log(resposta);
-
-    //             resposta.json().then(json => {
-    //                 console.log(json);
-    //                 console.log(JSON.stringify(json));
-
-    //                 sessionStorage.EMAIL_USUARIO = json.email;
-    //                 sessionStorage.NOME_USUARIO = json.nome;
-    //                 sessionStorage.ID_USUARIO = json.id;
-
-    //                 setTimeout(function () {
-    //                     window.location = '/site_Log/';
-    //                 }, 1000); // apenas para exibir o loading
-
-    //             });
-
-    //         } else {
-
-    //             console.log("Houve um erro ao tentar realizar o login!");
-    //             alert("Houve um erro ao tentar realizar o login!");
-
-    //             resposta.text().then(texto => {
-    //                 console.error(texto);
-
-    //             });
-    //         }
-
-    //     }).catch(function (erro) {
-    //         console.log(erro);
-    //     })
-
-    //     return false;
-    // }
-
+    // Fim do script para cadastrar o telefone
 
 </script>
+
 </html>

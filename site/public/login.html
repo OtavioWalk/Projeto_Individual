@@ -24,9 +24,11 @@
                 <a href="">
                     <p>Sobre nós</p>
                 </a>
-                <a href="/Testes/Testes.html"><p>Testes</p>
+                <a href="/Testes/Testes.html">
+                    <p>Testes</p>
                 </a>
-                <a href=""><p>Notícias</p>
+                <a href="">
+                    <p>Notícias</p>
                 </a>
                 <p>|</p>
                 <a href="/login.html"><button class="btn_Entrar">Entrar</button></a>
@@ -35,6 +37,8 @@
 
         </div>
     </header>
+
+    <!-- Início do login -->
 
     <div id="imagemFundo">
         <br><br><br><br><br>
@@ -60,16 +64,19 @@
         <br><br><br><br><br>
     </div>
 
+    <!-- Fim do login -->
+
 </body>
 <script>
 
+    // Início do script para resgatar as informaçoes no banco de dados
 
     function entrar() {
 
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
-        
+
 
         if (emailVar == "" || senhaVar == "") {
             alert('Insira os dados corretamente')
@@ -129,6 +136,7 @@
         return false;
     }
 
+    // Fim do script para resgatar as informaçoes no banco de dados
 
 </script>
 

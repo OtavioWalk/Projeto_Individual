@@ -1,29 +1,32 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
 
 #imagemFundo {
+
   background-image: url(../assets/imagens/FundoPerguntas.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 body {
-  zoom: 1.25 /* Coloca o zoom em 125% */
+
+  zoom: 1.25
+    /* Coloca o zoom em 125% */
 }
 
 .container {
+
   display: flex;
   position: relative;
   width: 100%;
-
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
   justify-content: center;
-
 }
 
 .column {
+
   margin-bottom: 1.5rem;
   width: 100%;
   float: left;
@@ -34,6 +37,7 @@ body {
 .container:after,
 .row:after,
 .clearfix {
+
   content: "";
   display: table;
   clear: both;
@@ -41,6 +45,7 @@ body {
 
 
 body {
+
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: #000000;
@@ -53,30 +58,35 @@ h1,
 h2,
 h3,
 h4 {
+
   font-family: 'Roboto', sans-serif;
   color: #0d4688;
   margin-top: 0;
 }
 
 h1 {
+
   font-size: 54px;
 }
 
 h2 {
+
   font-size: 36px;
 }
 
 h3 {
+
   color: #1457a3;
   font-size: 26px;
 }
 
-
 .center {
+
   text-align: center;
 }
 
 .questions_box {
+
   background-color: #ffffff;
   padding: 60px;
   text-align: left;
@@ -84,12 +94,8 @@ h3 {
   font-size: 20px;
 }
 
-/* .questions_box #question-6{
-  background-color: #ffffff;
-  text-align: center;
-} */
-
 .button {
+
   font-family: 'Barclaycard Co Lt', Tahoma, sans-serif;
   margin: 10px 0 0 0;
   float: right;
@@ -116,6 +122,7 @@ h3 {
 }
 
 .button:hover {
+
   background-color: #059fdb !important;
   color: white;
 }
@@ -125,12 +132,13 @@ h3 {
 #question-4,
 #question-5,
 #question-6 {
+
   display: none;
   font-family: 'Roboto', sans-serif;
-
 }
 
 #progress_bar {
+
   background-color: #1457a3;
   width: 20%;
   height: 10px;
@@ -139,6 +147,7 @@ h3 {
 
 
 .div_container_29 {
+
   width: 100%;
   display: flex;
   justify-content: center;
@@ -155,12 +164,10 @@ h3 {
   border-radius: 20px;
   border-width: 2px;
   border-color: black;
-
 }
 
 .div_carregando h1 {
 
   color: black;
   font-size: 50px;
-
 }

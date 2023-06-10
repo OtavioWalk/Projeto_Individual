@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -28,7 +28,8 @@
                 <a href="Testes/Testes.html">
                     <p>Testes</p>
                 </a>
-                <a href=""><p>Notícias</p>
+                <a href="noticias.html">
+                    <p>Notícias</p>
                 </a>
                 <p>|</p>
                 <a href="login.html"><button class="btn_Entrar">Entrar</button></a>
@@ -38,47 +39,15 @@
         </div>
     </header>
 
+    <!-- Início do cadastro -->
+
     <div id="imagemFundo">
         <br><br>
-        <!-- <div class="div_container3">
-            <div class="div_cadastro">
 
-                <h1>Cadastro</h1>
-
-                <span>Seu E-mail</span>
-                <br>
-                <input id="ipt_email">
-                <br><br>
-                <span>Nickname</span>
-                <br>
-                <input id="ipt_nick">
-                <br><br>
-                <span>Sua idade</span>
-                <br>
-                <input id="ipt_nascimento">
-                <br><br>
-                <span>Sua senha</span>
-                <br>
-                <input id="ipt_senha">
-                <br><br><br>
-                <div class="div_botaoCad"> <button onclick="cadastrar()">Cadastrar</button></div>
-                <br><br>
-            </div>
-        </div> -->
         <div class="login">
-            <!-- <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div> -->
             <div class="div_container3">
                 <div class="div_cadastro">
                     <h1>Bem-vindo!</h1>
-
-                    <!--
-                             Para inserir mais um campo, copie uma das inputs abaixo.
-                             Assim que inserir vá para o script abaixo.
-                         -->
 
                     <span>Nome:</span>
                     <input id="nome_input" type="text" placeholder="Seu nome">
@@ -101,12 +70,15 @@
         <br><br>
     </div>
 
-
+    <!-- Fim do cadastro -->
 
 </body>
 
 </html>
 <script>
+
+    // Início do script para mandar os dados para o banco de dados
+
     function cadastrar() {
 
 
@@ -169,5 +141,7 @@
     function sumirMensagem() {
 
     }
+
+// Fim do script para mandar os dados para o banco de dados
 
 </script>

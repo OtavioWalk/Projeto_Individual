@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 
 <body>
@@ -38,6 +38,9 @@
 
         </div>
     </header>
+
+    <!-- Início da dashboard -->
+
     <div id="imagemFundo">
         <br><br><br>
         <div class="conteudo">
@@ -45,10 +48,9 @@
             <div class="info1">
                 <span><span id="porCento"></span><span id="nomeP"></span></span>
 
-
                 <div class="grafico">
                     <br><br>
-                    
+
                     <canvas id="myChart"></canvas>
                 </div>
 
@@ -58,18 +60,15 @@
     </div>
     </div>
 
-
+    <!-- Fim da dashboard -->
 
 </body>
 <script>
 
-
+    // Início do script para guardar o nome do usuario e limpar o sessionStorage
 
     var nome = sessionStorage.NOME_USUARIO;
     nomeExibicao.innerHTML = `${nome}`;
-
-
-
 
     function sair() {
 
@@ -77,6 +76,9 @@
 
     }
 
+    // Fim do script para guardar o nome do usuario e limpar o sessionStorage
+
+    // Início do script para recuperar as respostas do quiz
 
     window.onload = function iniciar() {
 
@@ -106,7 +108,6 @@
             });
     }
 
-
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
@@ -128,7 +129,7 @@
                 datasets: [{
                     label: 'Resultados',
                     data: [global[0].Quantidade, global[1].Quantidade, global[2].Quantidade, global[3].Quantidade],
-                    backgroundColor: ['magenta', 'Black', 'red', 'green'],
+                    backgroundColor: ['magenta', 'red', 'green', 'black'],
                     borderWidth: 1
                 }]
             },
@@ -141,29 +142,9 @@
             }
         });
 
-
-        // let dados = {
-        //     labels: labels,
-        //     datasets: [{
-        //         label: 'Umidade',
-        //         data: [],
-        //         fill: false,
-        //         borderColor: 'rgb(75, 192, 192)',
-        //         tension: 0.1
-        //     },
-        //     {
-        //         label: 'Temperatura',
-        //         data: [],
-        //         fill: false,
-        //         borderColor: 'rgb(199, 52, 52)',
-        //         tension: 0.1
-        //     }]
-        // };
-
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
-
 
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
@@ -173,6 +154,9 @@
 
         console.log('----------------------------------------------')
 
+        // Início do script para recuperar as respostas do quiz
+
+        // Início do script para definir a porcentagem do resultado e o nome do personagem
 
         var soma = Number(global[0].Quantidade + global[1].Quantidade + global[2].Quantidade + global[3].Quantidade)
         console.log(soma)
@@ -185,27 +169,30 @@
         }
 
         if (sessionStorage.nomePersonagem == 'Kratos') {
-            var percent = (global[1].Quantidade * 100) / soma
+            var percent = ((global[1].Quantidade * 100) / soma).toFixed(1)
 
             porCento.innerHTML = 'Você está entre os ' + percent + '% que tiveram o resultado ' + sessionStorage.nomePersonagem
 
         }
 
         if (sessionStorage.nomePersonagem == 'Deacon') {
-            var percent = (global[2].Quantidade * 100) / soma
+            var percent = ((global[2].Quantidade * 100) / soma).toFixed(1)
 
             porCento.innerHTML = 'Você está entre os ' + percent + '% que tiveram o resultado ' + sessionStorage.nomePersonagem
 
         }
 
         if (sessionStorage.nomePersonagem == 'Jim Sakai') {
-            var percent = (global[3].Quantidade * 100) / soma
+            var percent = ((global[3].Quantidade * 100) / soma).toFixed(1)
 
             porCento.innerHTML = 'Você está entre os ' + percent + '% que tiveram o resultado ' + sessionStorage.nomePersonagem
 
         }
 
+        // Fim do script para definir a porcentagem do resultado e o nome do personagem
+
     }
 
 </script>
+
 </html>

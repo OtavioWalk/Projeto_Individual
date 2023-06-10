@@ -4,23 +4,24 @@
 
 
 .div_container img {
+
     padding-left: 20px;
     width: 150px;
 }
 
 .div_container {
 
-        display: flex;
-        flex-direction: row;
-        height: 150px;
-        width: auto;
-        background-color: black;
-justify-content: space-between;
-font-family: 'Roboto', sans-serif;
-
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: auto;
+    background-color: black;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
 }
 
 ul {
+
     color: #ffffff;
     font-size: 30px;
     gap: 50px;
@@ -33,6 +34,7 @@ ul {
 }
 
 .btn_Entrar {
+
     background-color: #000000;
     padding: 5px;
     font-size: 30px;
@@ -51,11 +53,10 @@ ul {
     border-radius: 100px;
     color: #ff0000d5;
     width: 100px;
-
-
 }
 
 .btn_Registrar {
+
     background-color: #0070CC;
     border: 3px solid #0070CC;
     border-radius: 100px;
@@ -64,10 +65,10 @@ ul {
     font-size: 30px;
     font-weight: 500;
     width: 150px;
-
 }
 
 body {
+
     margin: 0;
 }
 
@@ -75,6 +76,4 @@ body {
 
     text-decoration: none;
     color: #ffffff;
-    
-    
-    }
+}

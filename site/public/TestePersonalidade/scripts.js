@@ -6,7 +6,6 @@ var question_three = document.getElementById('question-3');
 var question_four = document.getElementById('question-4');
 var question_five = document.getElementById('question-5');
 
-var pontosTotais = 0
 var resultFinal = undefined
 var idUsuario = sessionStorage.ID_USUARIO;
 
@@ -34,6 +33,8 @@ question_five.addEventListener('click', function (event) {
     storeAnswer(5, event)
 })
 
+// Soma os pontos das respostas
+
 function totalScore() {
     var total_score =
         answers.question1 +
@@ -45,21 +46,13 @@ function totalScore() {
     return total_score;
 }
 
-function getInfoBasedOnScore() {
-    if (totalScore() < 7) {
-        var score_info = "Você precisa tomar mais cuidado com a segurança!";
-    } else if (totalScore() > 7) {
-        var score_info = "Parabéns! Você está bem de segurança!"
-    }
-
-    return score_info;
-}
-
 var submit1 = document.getElementById('submit1');
 var submit2 = document.getElementById('submit2');
 var submit3 = document.getElementById('submit3');
 var submit4 = document.getElementById('submit4');
 var submit5 = document.getElementById('submit5');
+
+// Passar as questões
 
 function nextQuestion(question_number) {
     var current_question_number = question_number - 1;
@@ -139,30 +132,26 @@ submit5.addEventListener('click', function () {
     }
 })
 
-// submit5.addEventListener('click', function () {
-//     document.getElementById("printtotalscore").innerHTML = totalScore();
-//     document.getElementById("printscoreinfo").innerHTML = getInfoBasedOnScore();
-// })
+// Aumento da barra de progresso
 
 function growProgressBar(percentage_width) {
     var bar = document.getElementById("progress_bar");
     bar.style.width = percentage_width;
 }
 
-
 div_container_29.style.display = "none";
-
-
 
 submit5.addEventListener('click', function () {
 
-    // 'question-5'.style.display = "none"
     div_container_29.style.display = "block";
 
     const timer = (seconds) => {
         let time = seconds * 1000
         return new Promise(res => setTimeout(res, time))
     }
+
+    // Início do carregamento
+
     async function Carregando() {
         for (var i = 0; i <= 7; i++) {
 
@@ -196,7 +185,11 @@ submit5.addEventListener('click', function () {
                 div_imgCarregando.innerHTML = `<img src="/TestePersonalidade/Carregando%2099%25.png" style="border-radius: 50px;">`
                 await timer(1);
 
+                // Fim do carregamento
+
             } else if (i == 6) {
+
+                // Início da decisão de personagem
 
                 console.log(totalScore())
 
@@ -225,7 +218,7 @@ submit5.addEventListener('click', function () {
                     alert(resultFinal)
                     sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
-                window.location.href = "../Resultados/ResultJim.html"
+                    window.location.href = "../Resultados/ResultJim.html"
 
                 } else if (totalScore() >= 16 && totalScore() <= 20) {
 
@@ -234,37 +227,35 @@ submit5.addEventListener('click', function () {
                     sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
 
-                window.location.href = "../Resultados/ResultKratos.html"
+                    window.location.href = "../Resultados/ResultKratos.html"
 
                 }
 
+                // Fim da decisão de personagem
+
                 break
             }
-
         }
-
     }
 
     Carregando();
 
-
 })
+
+// Início do guardar resultado
+
 var graficoVar = '';
 function cadastrar(fkUsuario, resultadoTeste) {
 
-
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-
 
     if (fkUsuario == "" || resultadoTeste == ``) {
 
         console.log("Mensagem de erro para todos os campos em branco");
 
-
         return false;
     }
-
 
     // Enviando o valor da nova input
     fetch(`/grafico/cadastrar/${fkUsuario}/${resultadoTeste}`, {
@@ -272,21 +263,14 @@ function cadastrar(fkUsuario, resultadoTeste) {
         headers: {
             "Content-Type": "application/json"
         },
-        // body: JSON.stringify({
-        //     // crie um atributo que recebe o valor recuperado aqui
-        //     // Agora vá para o arquivo routes/usuario.js
-        //     graficoServer: graficoVar,
-        //     fkUsuarioServer: fkUsuarioVar
-        // })
+
     }).then(function (resposta) {
 
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
 
-
             console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
-
 
         }
 
@@ -297,3 +281,5 @@ function cadastrar(fkUsuario, resultadoTeste) {
 
     return false;
 }
+
+    // Fim do guardar resultado

@@ -32,13 +32,16 @@
                     <p>Notícias</p>
                 </a>
                 <p>|</p>
-                <b><p id="nomeExibicao"></p></b>
+                <b>
+                    <p id="nomeExibicao"></p>
+                </b>
                 <a href="/"><button class="btn_Sair" onclick="sair()">Sair</button></a>
             </ul>
 
         </div>
     </header>
 
+    <!-- Início do link do meu quiz -->
 
     <div class="div_container4">
         <br><br><br>
@@ -51,35 +54,44 @@
                 <br>
                 <a href="../TestePersonalidade/Teste_Personalidade.html"><span>Qual personagem dos exclusivos
                         PlayStation você é ?</span></a>
-<br>
+                <br>
 
             </div>
         </div>
 
+        <!-- Fim do link do meu quiz -->
+
         <div class="div_linha"></div>
+
+        <!-- Início dos Testes  -->
 
         <div class="div_direita">
 
             <div class="div_junto">
 
-            <h1>Outros quizzes</h1>
-            <img src="../assets/imagens/img_Testes/TesteAloy.jpg" alt="">
-            <br>
-            <a href="https://pt.quizur.com/trivia/voce-conhece-horizon-forbidden-west-MXs6">O quanto voce sabe sobre
-                horizon forbidden west?</a>
-            <br>
-            <img src="../assets/imagens/Imagens_Result/FimDeacon.jpg" alt="">
-            <br>
-            <a href="https://pt.quizur.com/trivia/quanto-voce-conhece-days-gone-spoiler-KElv">O quanto voce sabe sobre
-                Days Gone?</a>
-            <br>
+                <h1>Outros quizzes</h1>
+                <img src="../assets/imagens/img_Testes/TesteAloy.jpg" alt="">
+                <br>
+                <a href="https://pt.quizur.com/trivia/voce-conhece-horizon-forbidden-west-MXs6">O quanto você sabe sobre
+                    horizon forbidden west?</a>
+                <br>
+                <img src="../assets/imagens/Imagens_Result/FimDeacon.jpg" alt="">
+                <br>
+                <a href="https://pt.quizur.com/trivia/quanto-voce-conhece-days-gone-spoiler-KElv">O quanto você sabe
+                    sobre
+                    Days Gone?</a>
+                <br>
+            </div>
         </div>
-        </div>
+
+        <!-- Fim dos Testes  -->
 
     </div>
 
 </body>
 <script>
+
+    // Início do script para guardar o nome do usuario e limpar o sessionStorage
 
     var nome = sessionStorage.NOME_USUARIO;
     nomeExibicao.innerHTML = `${nome}`;
@@ -87,9 +99,11 @@
     function sair() {
 
         sessionStorage.clear()
-    
+
     }
 
+    // Fim do script para guardar o nome do usuario e limpar o sessionStorage
 
 </script>
+
 </html>

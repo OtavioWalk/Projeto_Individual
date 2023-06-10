@@ -3,18 +3,21 @@
 }
 
 #imagemFundo {
+
     background-image: url(../assets/imagens/FundoCadastro.png);
     background-repeat: no-repeat;
     background-size: 100% 1400px;
 }
 
 .div_container3 {
+
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .div_login {
+
     display: flex;
     background-color: rgba(0, 0, 0, 0.9);
     flex-direction: column;
@@ -26,16 +29,19 @@
 }
 
 .div_login input {
+
     width: 80%;
 }
 
 .div_login span {
+
     display: flex;
     width: 100%;
     padding-left: 40px;
 }
 
 .div_login a {
+
     text-decoration: none;
     color: #ffffff;
 }
@@ -53,11 +59,13 @@ input {
 }
 
 span {
+
     font-size: 30px;
     padding-bottom: 10px;
 }
 
 button {
+
     padding: 15px;
     width: 200px;
     border-radius: 10px;
@@ -67,5 +75,6 @@ button {
 }
 
 h1 {
+
     text-align: center;
 }

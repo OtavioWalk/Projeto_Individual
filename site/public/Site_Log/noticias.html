@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/NavBarLog.css">
     <link rel="stylesheet" href="../css/noticias.css">
-    <title>Document</title>
+    <title>Notícias</title>
 </head>
 
 <body>
@@ -37,6 +37,8 @@
         </div>
     </header>
 
+    <!-- Início da notícia 1 -->
+
     <div class="div_container1">
 
         <div class="div_centralizado">
@@ -49,27 +51,31 @@
 
             <span>Marvel's Spider-Man 2 - Trailer de Revelação de Gameplay | PS5</span>
 
+            <!-- Fim da notícia 1 -->
 
             <div class="div_linha"></div>
-            <br>
-            <br>
 
+            <!-- Início da notícia 2 -->
+
+            <br>
+            <br>
             <img src="../assets/imagens/noticia2.jpg" alt="">
             <span><a
                     href="https://blog.br.playstation.com/2023/06/08/marvels-spider-man-2-chega-exclusivamente-ao-ps5-dia-20-de-outubro-edicoes-padrao-e-digital-deluxe-detalhadas/">Marvel’s
                     Spider-Man 2 chega exclusivamente ao PS5 dia 20 de outubro.</a></span>
 
-        </div>
-    </div>
+            <!-- Fim da notícia 1 -->
 
         </div>
-
     </div>
-
-
+    </div>
+    </div>
 
 </body>
 <script>
+
+    // Início do script para guardar o nome do usuario e limpar o sessionStorage
+
     var nome = sessionStorage.NOME_USUARIO;
     nomeExibicao.innerHTML = `${nome}`;
 
@@ -78,6 +84,9 @@
         sessionStorage.clear()
 
     }
+
+    // Fim do script para guardar o nome do usuario e limpar o sessionStorage
+
 </script>
 
 </html>
