@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/NavBar.css">
     <link rel="stylesheet" href="css/Cadastro.css">
+    <link rel="shortcut icon" href="../assets/imagens/favicon.ico" type="image/x-icon">
     <script src="js/funcoes.js"></script>
 </head>
 
@@ -22,7 +23,7 @@
 
             <a href="index.html"><img class="logo" src="assets/imagens/PS BLOG.png" alt=""></a>
             <ul>
-                <a href="">
+                <a href="sobreNos.html">
                     <p>Sobre nós</p>
                 </a>
                 <a href="Testes/Testes.html">
@@ -96,8 +97,16 @@
             alert('Insira os dados corretamente')
 
             return false;
+
+        } else if(senhaVar != confirmacaoSenhaVar){
+
+            alert('As senhas estão diferentes')
+
+            return false;
+
         }
-        else {
+        else
+        {
             setInterval(sumirMensagem, 5000)
         }
 

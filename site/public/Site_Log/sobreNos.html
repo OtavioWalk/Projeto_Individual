@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testes</title>
-
+    <title>Sobre Nós</title>
+    <link rel="shortcut icon" href="../assets/imagens/PS BLOG.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/NavBar.css">
-    <link rel="stylesheet" href="../css/Testes.css">
-    <link rel="shortcut icon" href="../assets/imagens/favicon.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="../css/NavBarLog.css">
+    <link rel="stylesheet" href="../css/sobreNos.css">
 </head>
 
 <body>
@@ -22,20 +20,25 @@
 
         <div id="container " class="div_container">
 
-            <a href="../index.html"><img class="logo" src="../assets/imagens/PS BLOG.png" alt=""></a>
+            <a href="/site_Log/"><img class="logo" src="../assets/imagens/PS BLOG.png" alt=""></a>
             <ul>
-                <a href="../sobreNos.html">
+                <a href="sobreNos.html">
                     <p>Sobre nós</p>
                 </a>
-                <a href="../Testes/Testes.html">
+                <a href="Testes.html">
                     <p>Testes</p>
                 </a>
-                <a href="../noticias.html">
+
+                <a href="noticias.html">
                     <p>Notícias</p>
                 </a>
                 <p>|</p>
-                <a href="../login.html"><button class="btn_Entrar">Entrar</button></a>
-                <a href="../Cadastro.html"><button class="btn_Registrar">Registrar</button></a>
+
+                <b>
+                    <p id="nomeExibicao"></p>
+                </b>
+
+                <a href="/"><button class="btn_Sair" onclick="sair()">Sair</button></a>
             </ul>
 
         </div>
@@ -49,11 +52,15 @@
 
             <div class="div_junto">
 
-                <h1>Em alta 🔥🔥🔥</h1>
-                <img src="../assets/imagens/Img_Página inicial/Teste1.png" alt="">
-                <br>
-                <a href="../login.html"><span>Qual personagem dos exclusivos
-                        PlayStation você é ?</span></a>
+                <h1>Sobre nós</h1>
+                <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Eu sou o Otávio, o principal criador do PS Blog, criei esse site para demonstrar e compartilhar
+                    a minha paixão por video-games. A minha história com os jogos começou quando o meu primo me deu 
+                    o PS1 dele muitos anos atrás, porém o momento que fiquei mais íntimo dos games foi no ano de 2013
+                    quando ganhei um Xbox 360, e a partir daí me apaixonei por essa indústria. Atualmente possuo um PS5,
+                    onde posso aproveitar ao máximo todos os incríveis lançamentos.<br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp  Agradeço por fazerem parte dessa comunidade e espero que 
+                    você desfrute do conteúdo que oferecemos. Junte-se a nós nessa jornada 
+                    emocionante pelos jogos do PlayStation!</span>
                 <br>
 
             </div>
@@ -69,17 +76,9 @@
 
             <div class="div_junto">
 
-                <h1>Outros quizzes</h1>
-                <img src="../assets/imagens/img_Testes/TesteAloy.jpg" alt="">
-                <br>
-                <a href="../login.html">O quanto você sabe sobre
-                    horizon forbidden west?</a>
-                <br>
-                <img src="../assets/imagens/Imagens_Result/FimDeacon.jpg" alt="">
-                <br>
-                <a href="../login.html">O quanto você sabe sobre
-                    Days Gone?</a>
-                <br>
+                <img src="../assets/imagens/sobreNos.jpg" alt="">
+                
+                
             </div>
         </div>
 
@@ -94,7 +93,7 @@
             <img class="logo" src="../assets/imagens/PS BLOG.png" alt="">
             <ul>
                 <br><br>
-                <div class="coluna"> <a href="../index.html">
+                <div class="coluna"> <a href="index.html">
                         <p id="centro">Página Inicial</p>
                     </a>
                     <a href="Testes.html">
@@ -104,10 +103,10 @@
                 <br><br>
                 <div class="linha"></div>
                 <br><br>
-                <div class="coluna"> <a href="../sobreNos.html">
+                <div class="coluna"> <a href="sobreNos.html">
                         <p id="centro">Sobre nós</p>
                     </a>
-                    <a href="../noticias.html">
+                    <a href="noticias.html">
                         <p id="centro">Notícias</p>
                     </a>
                 </div>
@@ -131,5 +130,20 @@
     </footer>
 
 </body>
+<script>
 
+    // Início do script para guardar o nome do usuario e limpar o sessionStorage
+
+    var nome = sessionStorage.NOME_USUARIO;
+    nomeExibicao.innerHTML = `${nome}`;
+
+    function sair() {
+
+        sessionStorage.clear()
+
+    }
+
+    // Fim do script para guardar o nome do usuario e limpar o sessionStorage
+
+</script>
 </html>

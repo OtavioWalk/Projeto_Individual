@@ -8,7 +8,7 @@ body {
 .div_container4 {
 
     display: flex;
-    height: 1000px;
+    height: 950px;
     width: 100%;
     background-color: #001329;
 }
@@ -16,6 +16,7 @@ body {
 a {
 
     text-decoration: none;
+    color: #ffffff;
 }
 
 
@@ -41,7 +42,7 @@ a {
 .div_direita img {
 
     width: 550px;
-    height: 341px;
+    height: 750px;
     border-radius: 30px;
     border: solid;
     border-color: black;
@@ -52,18 +53,13 @@ a {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
-    font-size: 27px;
-}
-
-a {
-
-    color: #ffffff;
+    font-size: 25px;
 }
 
 .div_linha {
 
     width: 3px;
-    height: 1000px;
+    height: 950px;
     background-color: #696969;
 }
 
@@ -98,17 +94,18 @@ a {
 
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
-    font-size: 55px;
+    font-size: 36px;
 }
 
 .div_junto {
 
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    text-align: left;
+    text-align: justify;
     width: 88%;
-
+    height: 100%;
 }
 
 *::-webkit-scrollbar {

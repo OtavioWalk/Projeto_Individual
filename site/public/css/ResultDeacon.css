@@ -16,14 +16,14 @@
 .div_result {
 
     display: table;
-    background-color: #574d3c5d;
+    background-color: #0000006d;
     flex-direction: column;
     width: 1000px;
     border: solid;
     border-color: black;
     align-items: center;
     border-radius: 20px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .div_texto {
