@@ -196,7 +196,7 @@ submit5.addEventListener('click', function () {
                 if (totalScore() >= 4 && totalScore() <= 7) {
 
                     resultFinal = `Aloy`
-                    alert(resultFinal)
+                    
                     sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
 
@@ -206,7 +206,7 @@ submit5.addEventListener('click', function () {
                 } else if (totalScore() >= 8 && totalScore() <= 11) {
 
                     resultFinal = `Deacon`
-                    alert(resultFinal)
+                    
                     sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
 
@@ -215,7 +215,7 @@ submit5.addEventListener('click', function () {
                 } else if (totalScore() >= 12 && totalScore() <= 15) {
 
                     resultFinal = `Jim Sakai`
-                    alert(resultFinal)
+                    
                     sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
                     window.location.href = "../Resultados/ResultJim.html"
@@ -223,7 +223,7 @@ submit5.addEventListener('click', function () {
                 } else if (totalScore() >= 16 && totalScore() <= 20) {
 
                     resultFinal = `Kratos`
-                    alert(resultFinal)
+                    
                     sessionStorage.nomePersonagem = resultFinal
                     cadastrar(idUsuario, resultFinal);
 
